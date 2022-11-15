@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="el" id="el" >
+        <input type="button" value="Add" onclick="add()" >
+        <input type="button" value="Display" onclick="display()"> <br><br>
+        <p id="list"></p>
+    </form>
+    <script>
+       let arr = [];
+       const el = document.getElementById('el');
+       let text = "";
+
+       function add(){
+           arr.push(+el.value);
+           el.value ='';
+       }
+
+       function display (){
+           for (let i=0; i<arr.length;i++){
+               text += `Element ${i} = ${arr[i]} <br>`
+               document.getElementById('list').innerHTML = text;
+           }
+       }
+    </script>
+</body>
+</html>
